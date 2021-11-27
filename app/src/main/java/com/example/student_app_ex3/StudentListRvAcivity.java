@@ -71,7 +71,7 @@ public class StudentListRvAcivity extends AppCompatActivity {
         public void setOnItemClickListener(OnItemClickListener listener){
             this.listener = listener;
         }
-//
+
         @NonNull
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
