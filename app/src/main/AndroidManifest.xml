@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Student_App_Ex3">
         <activity
+            android:name=".StudentListRvAcivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
