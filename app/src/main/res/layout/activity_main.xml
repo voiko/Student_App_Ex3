@@ -11,50 +11,39 @@
         android:id="@+id/main_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="277dp"
-        android:layout_marginBottom="254dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="333dp"
         android:text="Name:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
         android:id="@+id/main_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="349dp"
-        android:layout_marginBottom="314dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="368dp"
         android:text="ID:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/main_name" />
 
     <CheckBox
         android:id="@+id/main_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="537dp"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="35dp"
         android:text="Checked"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintTop_toBottomOf="@+id/main_addtest" />
 
     <Button
         android:id="@+id/main_BT_edit"
@@ -72,84 +61,68 @@
         android:id="@+id/imageView"
         android:layout_width="262dp"
         android:layout_height="214dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00BCD4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054"
         app:srcCompat="@drawable/avatar2" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/main_addtest"
         android:layout_width="88dp"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="40dp"
         android:text="Address:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintTop_toBottomOf="@+id/mane_phoneTEST"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mane_phoneTEST"
         android:layout_width="62dp"
         android:layout_height="27dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="330dp"
         android:text="Phone:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintTop_toBottomOf="@+id/main_id" />
 
     <TextView
         android:id="@+id/main_name_vt"
         android:layout_width="270dp"
         android:layout_height="40dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="414dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/main_name"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/main_id_vt"
         android:layout_width="270dp"
         android:layout_height="40dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="344dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_name_vt" />
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/main_id"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/main_phone_vt"
         android:layout_width="270dp"
         android:layout_height="40dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="274dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_id_vt" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/mane_phoneTEST"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/main_address_vt"
         android:layout_width="270dp"
         android:layout_height="40dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="204dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_phone_vt" />
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/main_addtest"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

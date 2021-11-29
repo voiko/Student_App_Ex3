@@ -20,36 +20,52 @@ import com.example.student_app_ex3.Model.Model;
 import com.example.student_app_ex3.Model.Student;
 
 public class StudentListRvActivity extends AppCompatActivity {
-
+    public final static String
+            MESSAGE_KEY ="com.example.message_key";
     List<Student> data;
+
     Button newStud;
+    //CheckBox CB;
+    View setLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list_rv_acivity);
-
+        setLayout = findViewById(R.id.layout_row);
+      //  CB =findViewById(R.id.listrow_cb);
         data = Model.instance.getAllStudents();
-//        View setLayout = findViewById(R.id.layout_row);
+
         RecyclerView list = findViewById(R.id.studentlist_rv);
         list.setHasFixedSize(true);
         list.setLayoutManager(new LinearLayoutManager(this));
 
         MyAdapter adapter = new MyAdapter();
         list.setAdapter(adapter);
+
         newStud = findViewById(R.id.main_btn);
 
+        Intent intentDetail= new Intent(this, MainActivity.class);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Log.d("TAG","row was clicked " + position); // get the click on the list
+                String s = data.get(position).getId();
+                intentDetail.putExtra(MESSAGE_KEY,s);
+                startActivity(intentDetail);
             }
         });
     }
 
-    public void setLayout(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+//    public void CB(View v){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//        Log.d("TAG","layout test");
+//    }
+//
+//    public void setLayout(View v){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
 
     public void newStudent(View v){
         Intent intent = new Intent(this, NewStudentActivity.class);
@@ -66,13 +82,11 @@ public class StudentListRvActivity extends AppCompatActivity {
             nameTv = itemView.findViewById(R.id.listrow_name);
             idTv = itemView.findViewById(R.id.listrow_id);
             cb = itemView.findViewById(R.id.listrow_cb);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition(); //the click on the item
                     listener.onItemClick(pos);
-//                    setLayout(v);
                 }
             });
         }

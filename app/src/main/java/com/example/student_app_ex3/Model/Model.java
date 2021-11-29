@@ -6,20 +6,54 @@ import java.util.List;
 public class Model {
     public static final Model instance = new Model();
 
-    private Model(){
-        for(int i=0;i<20;i++){
-            Student s = new Student("name",""+i,0 ,"",false);
+    private Model() {
+        for (int i = 0; i < 20; i++) {
+            Student s = new Student("name", "" + i, "", "", false);
             data.add(s);
         }
     }
 
     List<Student> data = new LinkedList<Student>();
 
-    public List<Student> getAllStudents(){
+    public List<Student> getAllStudents() {
         return data;
     }
 
-    public void addStudent(Student student){
+    public void setData(List<Student> data) {
+        this.data = data;
+    }
+
+    public void addStudent(Student student) {
         data.add(student);
+    }
+
+    public Student getStudent(String string) {
+
+
+        for (int i = 0; i < data.size(); i++) {
+            String temp = data.get(i).getId();
+            if (temp.compareTo(string) == 0) {
+                Student student = data.get(i);
+                return student;
+            }
+        }
+        return null;
+    }
+
+    public void updateList(Student oldStudent, Student newStudent) {
+        boolean check = false;
+            for (Student s : data) {
+                if (s.id.equals(oldStudent.getId())) {
+                    s.setName(newStudent.name);
+                    s.setId(newStudent.id);
+                    s.setPhone(newStudent.phone);
+                    s.setAddress(newStudent.address);
+                    s.setFlag(newStudent.flag);
+                    check =newStudent.flag;
+                }
+            }
+
+
+
     }
 }
