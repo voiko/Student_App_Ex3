@@ -45,6 +45,8 @@ public class EditStudentActivit extends AppCompatActivity {
         String s = intentFromDetail.getStringExtra(MESSAGE_KEY);
         studentData = Model.instance.getStudent(s);
 
+        oldDisplay();
+
         Intent intentEdit = new Intent(this,StudentListRvActivity.class);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +75,13 @@ public class EditStudentActivit extends AppCompatActivity {
         });
     }
 
-
+    public void oldDisplay(){
+        name.setText(studentData.getName());
+        id.setText(studentData.getId());
+        address.setText(studentData.getAddress());
+        phone.setText(studentData.getPhone());
+        cb.setChecked(studentData.isFlag());
+    }
 
     public void save(){
         String name1=name.getText().toString();
