@@ -32,17 +32,26 @@ public class StudentListRvActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list_rv_acivity);
         setLayout = findViewById(R.id.layout_row);
-      //  CB =findViewById(R.id.listrow_cb);
         data = Model.instance.getAllStudents();
-
         RecyclerView list = findViewById(R.id.studentlist_rv);
         list.setHasFixedSize(true);
         list.setLayoutManager(new LinearLayoutManager(this));
-
         MyAdapter adapter = new MyAdapter();
         list.setAdapter(adapter);
-
         newStud = findViewById(R.id.main_btn);
+
+
+
+        Intent intent = getIntent();
+        String s = intent.getStringExtra(MESSAGE_KEY);
+        Intent intentEdit1 = new Intent(this,NewStudentActivity.class);
+        newStud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intentEdit1.putExtra(MESSAGE_KEY,s);
+                startActivity(intentEdit1);
+            }
+        });
 
         Intent intentDetail= new Intent(this, MainActivity.class);
         adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -56,16 +65,6 @@ public class StudentListRvActivity extends AppCompatActivity {
         });
     }
 
-//    public void CB(View v){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//        Log.d("TAG","layout test");
-//    }
-//
-//    public void setLayout(View v){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//    }
 
     public void newStudent(View v){
         Intent intent = new Intent(this, NewStudentActivity.class);

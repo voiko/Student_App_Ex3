@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="editStudent"
     tools:context=".MainActivity">
 
     <TextView
@@ -47,15 +46,16 @@
 
     <Button
         android:id="@+id/main_BT_edit"
-        android:layout_width="186dp"
-        android:layout_height="62dp"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="18dp"
         android:backgroundTint="#3FE0F4"
-        android:onClick="editStudent"
         android:text="Edit"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_address_vt"
+        app:layout_constraintVertical_bias="0.859" />
 
     <ImageView
         android:id="@+id/imageView"

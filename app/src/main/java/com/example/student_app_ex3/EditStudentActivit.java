@@ -43,16 +43,12 @@ public class EditStudentActivit extends AppCompatActivity {
 
         Intent intentFromDetail = getIntent();
         String s = intentFromDetail.getStringExtra(MESSAGE_KEY);
-
         studentData = Model.instance.getStudent(s);
-
-        oldDisplay();
 
         Intent intentEdit = new Intent(this,StudentListRvActivity.class);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                oldDisplay();
                 intentEdit.putExtra(MESSAGE_KEY,s);
                 startActivity(intentEdit);
             }
@@ -67,28 +63,19 @@ public class EditStudentActivit extends AppCompatActivity {
             }
         });
 
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Model.instance.removeStudent(studentData);
+                intentEdit.putExtra(MESSAGE_KEY,s);
+                startActivity(intentEdit);
+            }
+        });
     }
 
-    private void cancel() {
-        oldDisplay();
-    }
-
-    public void cancelBtn(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void oldDisplay(){
-        name.setText(studentData.getName());
-        id.setText(studentData.getId());
-        address.setText(studentData.getAddress());
-        phone.setText(studentData.getPhone());
-        cb.setChecked(studentData.isFlag());
-    }
 
 
     public void save(){
-
         String name1=name.getText().toString();
         String id1=id.getText().toString();
         String phone1=phone.getText().toString();
@@ -98,9 +85,6 @@ public class EditStudentActivit extends AppCompatActivity {
         Student newStudent=new Student(name1,id1,phone1,address1,cb1);
         Model.instance.updateList(studentData,newStudent);
         finish();
-
    }
-
-
 }
 

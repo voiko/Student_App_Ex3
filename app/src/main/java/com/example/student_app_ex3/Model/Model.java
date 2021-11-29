@@ -27,6 +27,17 @@ public class Model {
         data.add(student);
     }
 
+    public void removeStudent(Student student){
+        for(Student s:data)
+        {
+            if(s.id.equals(student.getId()))
+            {
+                data.remove(s);
+                break;
+            }
+        }
+    }
+
     public Student getStudent(String string) {
 
 
@@ -49,7 +60,6 @@ public class Model {
                     s.setPhone(newStudent.phone);
                     s.setAddress(newStudent.address);
                     s.setFlag(newStudent.flag);
-                    check =newStudent.flag;
                 }
             }
 
