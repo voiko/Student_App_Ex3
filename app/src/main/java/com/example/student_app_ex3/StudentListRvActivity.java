@@ -63,8 +63,8 @@ public class StudentListRvActivity extends AppCompatActivity {
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-            nameTv = itemView.findViewById(R.id.listrow_name_tv);
-            idTv = itemView.findViewById(R.id.listrow_id_tv);
+            nameTv = itemView.findViewById(R.id.listrow_name);
+            idTv = itemView.findViewById(R.id.listrow_id);
             cb = itemView.findViewById(R.id.listrow_cb);
 
             itemView.setOnClickListener(new View.OnClickListener() {
