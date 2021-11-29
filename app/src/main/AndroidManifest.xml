@@ -13,7 +13,7 @@
             android:name=".NewStudentActivity"
             android:exported="true" />
         <activity
-            android:name=".EditStudentActivit"
+            android:name=".EditStudentActivity"
             android:exported="true" />
         <activity
             android:name=".StudentListRvActivity"

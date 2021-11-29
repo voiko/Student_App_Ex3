@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ public class StudentListRvActivity extends AppCompatActivity {
     List<Student> data;
 
     Button newStud;
-    //CheckBox CB;
     View setLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +37,6 @@ public class StudentListRvActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter();
         list.setAdapter(adapter);
         newStud = findViewById(R.id.main_btn);
-
-
 
         Intent intent = getIntent();
         String s = intent.getStringExtra(MESSAGE_KEY);

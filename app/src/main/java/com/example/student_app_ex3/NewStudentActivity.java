@@ -63,7 +63,6 @@ public class NewStudentActivity extends AppCompatActivity {
         Student newStudent=new Student(name1,id1,phone1,address1,cb1);
         Model.instance.addStudent(newStudent);
         finish();
-
     }
 
     public void Cancel(){

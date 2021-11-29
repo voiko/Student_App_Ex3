@@ -4,16 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import com.example.student_app_ex3.Model.Model;
 import com.example.student_app_ex3.Model.Student;
-
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity  {
@@ -46,7 +42,7 @@ public class MainActivity extends AppCompatActivity  {
 
         setData(studentData);
 
-        Intent intentEdit = new Intent(this,EditStudentActivit.class);
+        Intent intentEdit = new Intent(this, EditStudentActivity.class);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,16 +50,6 @@ public class MainActivity extends AppCompatActivity  {
                 startActivity(intentEdit);
             }
         });
-
-//        nameVt.setText(data.get(0).getName());
-//        idVt.setText(data.get(0).getId());
-//        phoneVt.setText(data.get(0).getId());
-//        addressVt.setText(data.get(0).getId());
-//        Log.d("TAG","save set: " + nameVt.getText().toString());
-//        Log.d("TAG","save set: " + idVt.getText().toString());
-//        Log.d("TAG","save set: " + phoneVt.getText().toString());
-//        Log.d("TAG","save set: " + addressVt.getText().toString());
-
     }
 
     private void setData(Student stData) {
@@ -73,12 +59,4 @@ public class MainActivity extends AppCompatActivity  {
         addresTV.setText(stData.getAddress().toString());
         cb.setChecked(stData.isFlag());
     }
-
-
-//    public void editStudent(View v){
-//        Intent intent = new Intent(this, EditStudentActivit.class);
-//        startActivity(intent);
-//    }
-
-
 }

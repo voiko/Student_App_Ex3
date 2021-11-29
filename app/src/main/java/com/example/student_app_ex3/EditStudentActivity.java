@@ -13,9 +13,8 @@ import android.widget.EditText;
 import com.example.student_app_ex3.Model.Model;
 import com.example.student_app_ex3.Model.Student;
 
-import java.util.List;
 
-public class EditStudentActivit extends AppCompatActivity {
+public class EditStudentActivity extends AppCompatActivity {
     public final static String MESSAGE_KEY ="com.example.message_key";
 
     Student studentData;
