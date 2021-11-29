@@ -29,6 +29,7 @@ public class StudentListRvActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_list_rv_acivity);
 
         data = Model.instance.getAllStudents();
+//        View setLayout = findViewById(R.id.layout_row);
         RecyclerView list = findViewById(R.id.studentlist_rv);
         list.setHasFixedSize(true);
         list.setLayoutManager(new LinearLayoutManager(this));
@@ -71,10 +72,7 @@ public class StudentListRvActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     int pos = getAdapterPosition(); //the click on the item
                     listener.onItemClick(pos);
-                    Student student = data.get(pos);
-                    student.setFlag(cb.isChecked());
-                    Log.d("TAG","cb position" + pos);
-                    setLayout(v);
+//                    setLayout(v);
                 }
             });
         }
