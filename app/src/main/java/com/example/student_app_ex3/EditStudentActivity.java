@@ -42,10 +42,9 @@ public class EditStudentActivity extends AppCompatActivity {
 
         Intent intentFromDetail = getIntent();
         String s = intentFromDetail.getStringExtra(MESSAGE_KEY);
-        studentData = Model.instance.getStudent(s);
+        studentData = Model.instance.getStudent(s); // update the data of a student
 
-        oldDisplay();
-
+        oldDisplay(); // in order to get the last data of a student in the list
         Intent intentEdit = new Intent(this,StudentListRvActivity.class);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +73,7 @@ public class EditStudentActivity extends AppCompatActivity {
         });
     }
 
-    public void oldDisplay(){
+    public void oldDisplay(){ // save the old display of student fields status
         name.setText(studentData.getName());
         id.setText(studentData.getId());
         address.setText(studentData.getAddress());
@@ -82,7 +81,7 @@ public class EditStudentActivity extends AppCompatActivity {
         cb.setChecked(studentData.isFlag());
     }
 
-    public void save(){
+    public void save(){ // save all fields of student required
         String name1=name.getText().toString();
         String id1=id.getText().toString();
         String phone1=phone.getText().toString();

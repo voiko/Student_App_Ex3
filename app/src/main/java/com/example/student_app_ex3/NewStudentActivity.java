@@ -16,7 +16,6 @@ import com.example.student_app_ex3.Model.Student;
 public class NewStudentActivity extends AppCompatActivity {
     public final static String MESSAGE_KEY ="com.example.message_key";
 
-    Student studentData;
     EditText name;
     EditText id;
     EditText phone;
@@ -40,8 +39,8 @@ public class NewStudentActivity extends AppCompatActivity {
        save.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               saveData();
-               Cancel();
+               saveData(); // save button new student
+               Cancel(); // cancel button of the creation
            }
        });
 
@@ -52,7 +51,7 @@ public class NewStudentActivity extends AppCompatActivity {
            }
        });
     }
-
+    // save data of a new student added to the list
     private void saveData() {
         String name1=name.getText().toString();
         String id1=id.getText().toString();

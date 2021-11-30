@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity  {
         studentData = Model.instance.getStudent(s);
 
         setData(studentData);
+        //on click we will get the view of edit student activity
 
         Intent intentEdit = new Intent(this, EditStudentActivity.class);
         edit.setOnClickListener(new View.OnClickListener() {

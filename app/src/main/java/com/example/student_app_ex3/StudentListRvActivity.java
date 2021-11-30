@@ -22,9 +22,9 @@ public class StudentListRvActivity extends AppCompatActivity {
     public final static String
             MESSAGE_KEY ="com.example.message_key";
     List<Student> data;
-
     Button newStud;
     View setLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,8 @@ public class StudentListRvActivity extends AppCompatActivity {
                 startActivity(intentEdit1);
             }
         });
-
+        // in order to enter a current student data in the list
+        // this activity allows to edit this student details
         Intent intentDetail= new Intent(this, MainActivity.class);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -61,13 +62,12 @@ public class StudentListRvActivity extends AppCompatActivity {
         });
     }
 
-
     public void newStudent(View v){
         Intent intent = new Intent(this, NewStudentActivity.class);
         startActivity(intent);
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView nameTv;
         TextView idTv;
         CheckBox cb;
@@ -101,7 +101,7 @@ public class StudentListRvActivity extends AppCompatActivity {
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.student_list_row,parent,false);
-            MyViewHolder holder = new MyViewHolder(view,listener);
+            MyViewHolder holder = new MyViewHolder(view, listener);
             return holder;
         }
 
